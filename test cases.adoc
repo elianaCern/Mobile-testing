@@ -1,0 +1,165 @@
+:experimental:
+:my-experimental-attribute: value
+
+[frame=none]
+|===
+|Preconditions |Environment
+
+|Install app on phone from App Store
+|Operation system iOS version 17.3.1
+
+|Create new account
+|Model name iPhone 14 Pro
+
+|Open page 'Sell'
+|
+
+|===
+
+***
+
+== 1.
+
+=== Description for creating test cases for item upload area
+
+Item upload area could be split into the five main areas:
+
+ * Upload photos.
+ * Title and description.
+ * Classification via category, brand and condition.
+ * Price.
+ * Upload button.
+
+Test cases are created based on functional and non-functional testing types. Payed more attention to functionality, usability, UI and navigation on the item upload area. Item upload are should be easy to use and  also correctly navigates between screens. Icons and buttons should work correctly according its functionality.
+
+=== Test cases for item upload area
+
+==== 1. Test case: Check btn:[Upload photos] button.
+
+Steps:
+
+. Click on btn:[Upload photos] button.
+. Select few photos from phone gallery. 
+. Click btn:[done].
+
+Expected result:
+
+btn:[Upload photos] button should interact directly to the user phone gallery. And there should be possible select photos with one tap. When 'Done' is taped user should be navigate back to the item upload page.
+
+Actual result:
+
+As expected. Test pass.
+
+==== 2. Test case: Check btn:[Title] field.
+
+Steps:
+
+. Click on field btn:[Title].
+. Write title with at least 5 characters.
+. Then swipe up or down.
+
+Expected result:
+
+When user tap on the field btn:[Title], phone kyeboard should be apear. Taping characters should apear on the btn:[Title] field. After screen swipeing, phone kyeboard should disappear.
+
+Actual result:
+
+As expected. Test pass.
+
+==== 3. Test case: Check classificator btn:[Condition].
+
+Steps:
+
+. Click on btn:[Condition].
+. Then click back button.
+. Click on btn:[Condition] again.
+. Click on the one of condition.
+. Then tap on the btn:[Condition].
+. Click back button.
+. Click on the btn:[Condition] again.
+. Choose another condition.
+
+Expected result:
+
+When user click on field btn:[Condition] new section should be apear with list of conditions. When user don't choose any of conditions and click button back, btn:[Condition] value should be unchanged. When user choose one of the condition, after click on condition it should be navigate back to the upload area and value of btn:[Condition] should be updated with latest choice.  
+
+Actual result:
+
+As expected. Test pass.
+
+==== 4. Test case: Check the classification btn:[Category] and categories it involved.
+
+Steps:
+
+. Click on btn:[Category].
+. Choose category btn:[Women].
+. Choose category btn:[Clothing].
+. Choose category btn:[Outerwear].
+. Choose items btn:[Capes and ponchos].
+. Assert category btn:[Size' is apeared].
+
+Expected result:
+
+After clicking on a btn:[Category], the user should go to the next subcategory window and then to the next subcategory until the item is looking for is reached. Should be possible to mark the searched item and after that user automatically brings bringing back to the item upload area. When category of any clothes are chosen new category btn:[Size] should be apeared.
+
+Actual result:
+
+As expected. Test pass.
+
+==== 5. Test case: Check btn:[Upload] button.
+
+==== 5.1 Positive case.
+
+Steps:
+
+. Fill all fields on the item upload area.
+. Click btn:[Upload] button.
+
+Expected result:
+
+When all fields are filled after clicking 'Upload' button, new item should be uploaded and notification about succesfull upload apears. 
+
+Actual result:
+
+As expected. Test pass.
+
+==== 5.2 Negative case.
+
+Steps:
+
+. Open item upload area again.
+. Don't fill in any fields.
+. Click btn:[Upload].
+
+Expected result:
+
+When all fields are filled after clicking 'Upload' button, new item should be uploaded and notification about succesfull upload apears. When none of field are filled and 'Upload' button is clicked, user stay at the same screen and notifications with information about minmum requirements that is missing should be apeared below every field.
+
+Actual result:
+
+As expected. Test pass.
+
+*** 
+=== #Bugs:#
+
+. After deleting the written price and going back to the item upload are, it shows the previous price.
+
+Steps:
+
+. Click on btn:[Price].
+. Enter any price.
+. Click button btn:[Done].
+. Click on btn:[Price] again.
+. Delete entered price.
+. Click back to the item upload are.
+
+Actual result:
+
+After price was deleted and back to the item upload area there was still before the entered price, delete didn't save.
+
+Expected result:
+
+After the price is deleted and back to the item upload area there should be appear entered price, delete should be saved.
+
+#Priority:# Low.
+
